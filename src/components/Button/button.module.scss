@@ -1,0 +1,97 @@
+@import '@/themes/default/mixins';
+@import '@/themes/default/variables';
+
+.btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: $primary-color;
+  color: $white-color;
+  border: 1px solid transparent;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: 0.3s;
+
+  &--link {
+    width: fit-content;
+    &.active {
+      // background: rgba(255, 255, 255, 0.8);
+      @include rgbaBg($white-color, 0.8);
+      border-color: $primary-color;
+      font-weight: 600;
+      color: $default-text-color;
+
+      svg {
+        fill: $default-text-color;
+      }
+
+      &:hover {
+        background: $primary-color;
+        color: $white-color;
+        svg {
+          fill: $white-color;
+        }
+      }
+    }
+  }
+
+  &--button {
+    width: fit-content;
+
+    &[type='submit'] {
+      background: $primary-color;
+    }
+
+    &:disabled {
+      background: $disable-bg-color;
+      color: $white-color;
+
+      &:hover:not(.active),
+      &:focus-visible:not(.active) {
+        background: $disable-bg-color;
+        color: $white-color;
+
+        svg {
+          fill: $white-color;
+        }
+      }
+    }
+  }
+
+  &.error {
+    background: $error-color;
+  }
+
+  svg {
+    fill: $white-color;
+    transition: 0.3s;
+  }
+
+  &:has(> img),
+  &:has(> svg) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 0.75rem 1rem 0.75rem 0.75rem;
+
+    img,
+    svg {
+      width: auto;
+      height: 1.5rem;
+      margin-right: 0.2rem;
+    }
+
+    span {
+      flex-grow: 1;
+    }
+  }
+
+  &:hover:not(.active),
+  &:focus-visible:not(.active) {
+    @include rgbaBg($primary-color, 0.6);
+    color: $default-text-color;
+
+    svg {
+      fill: $default-text-color;
+    }
+  }
+}
