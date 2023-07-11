@@ -6,21 +6,13 @@ const Navigation: React.FC = () => {
     <nav className={styles.nav}>
       <ul>
         <li>
-          <ButtonLink activeClassName={styles.active} label="Home" path="/" />
+          <ButtonLink label="Home" path="/" />
         </li>
         <li>
-          <ButtonLink
-            activeClassName={styles.active}
-            label="Meus Produtos"
-            path="/products"
-          />
+          <ButtonLink label="Meus Produtos" path="/products" />
         </li>
         <li>
-          <ButtonLink
-            activeClassName={styles.active}
-            label="Meus Pedidos"
-            path="/orders"
-          />
+          <ButtonLink label="Meus Pedidos" path="/orders" />
         </li>
       </ul>
     </nav>

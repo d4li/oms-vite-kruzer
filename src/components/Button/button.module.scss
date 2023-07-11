@@ -14,7 +14,6 @@
   &--link {
     width: fit-content;
     &.active {
-      // background: rgba(255, 255, 255, 0.8);
       @include rgbaBg($white-color, 0.8);
       border-color: $primary-color;
       font-weight: 600;
@@ -71,7 +70,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // padding: 0.75rem 1rem 0.75rem 0.75rem;
 
     img,
     svg {
@@ -92,6 +90,16 @@
 
     svg {
       fill: $default-text-color;
+    }
+  }
+}
+
+.btn--onlyIcon {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+  &:has(> svg) {
+    svg {
+      height: 1rem;
     }
   }
 }
