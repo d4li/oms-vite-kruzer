@@ -103,7 +103,6 @@ const OrderForm = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)} method="post">
-      {orders.length && orders[0].products[0].quantity}
       <div className="flex flex-col sm:flex-row gap-4">
         <div className={styles.mainField}>
           <label>
