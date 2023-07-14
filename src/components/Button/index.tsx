@@ -22,7 +22,7 @@ export const ButtonLink: React.FC<IButtonProps> = ({
     [styles.btn]: true,
     [styles['btn--link']]: true,
     [styles.active]:
-      (path !== '/' && pathname.startsWith(path)) ||
+      (path !== '/' && pathname.startsWith(path.toString())) ||
       (pathname == path && !activeClassName),
     ...(activeClassName && pathname == path && { [activeClassName]: true }),
   });
