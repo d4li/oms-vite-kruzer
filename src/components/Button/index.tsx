@@ -21,7 +21,9 @@ export const ButtonLink: React.FC<IButtonProps> = ({
   const classButton = clsx({
     [styles.btn]: true,
     [styles['btn--link']]: true,
-    [styles.active]: pathname == path && !activeClassName,
+    [styles.active]:
+      (path !== '/' && pathname.startsWith(path)) ||
+      (pathname == path && !activeClassName),
     ...(activeClassName && pathname == path && { [activeClassName]: true }),
   });
 
